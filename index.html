@@ -324,7 +324,7 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#booking">Book</a></li>
   </ul>
-  <a href="https://wa.me/919979599340" class="nav-cta" target="_blank">Book Now</a>
+  <a href="https://wa.me/919979599340" class="nav-cta" target="_blank" rel="noopener noreferrer">Book Now</a>
   <button class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
@@ -548,7 +548,7 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
 
     <a class="insta-link"
        href="https://instagram.com/deevamakeovers"
-       target="_blank">
+       target="_blank" rel="noopener noreferrer">
       Follow on Instagram
     </a>
   </div>
@@ -567,8 +567,8 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
       <div class="b-big">Let's create your most beautiful look together.</div>
       <p>Fill out the form and we'll get back to you within a few hours — or reach out directly via WhatsApp for an instant response.</p>
       <div class="c-item"><div class="c-icon">📱</div><a href="tel:+919979599340">+91 99795 99340</a></div>
-      <div class="c-item"><div class="c-icon">💬</div><a href="https://wa.me/919979599340" target="_blank">WhatsApp: 99795 99340</a></div>
-      <div class="c-item"><div class="c-icon">📷</div><a href="https://instagram.com/deevamakeovers" target="_blank">@deevamakeovers</a></div>
+      <div class="c-item"><div class="c-icon">💬</div><a href="https://wa.me/919979599340" target="_blank" rel="noopener noreferrer">WhatsApp: 99795 99340</a></div>
+      <div class="c-item"><div class="c-icon">📷</div><a href="https://instagram.com/deevamakeovers" target="_blank" rel="noopener noreferrer">@deevamakeovers</a></div>
       <div class="c-item"><div class="c-icon">📍</div><span>Ahmedabad, Gujarat</span></div>
     </div>
     <div class="b-form reveal d2">
@@ -592,16 +592,16 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
       <h3>Deeva Makeovers</h3>
       <p>You, Reimagined. Premium beauty studio by Dipa Bhanushali — crafting stunning looks for brides, parties, and everyday elegance in Ahmedabad.</p>
       <div class="f-socials">
-        <a href="https://instagram.com/deevamakeovers" class="s-btn" target="_blank">📷</a>
-        <a href="https://wa.me/919979599340" class="s-btn" target="_blank">💬</a>
+        <a href="https://instagram.com/deevamakeovers" class="s-btn" target="_blank" rel="noopener noreferrer">📷</a>
+        <a href="https://wa.me/919979599340" class="s-btn" target="_blank" rel="noopener noreferrer">💬</a>
         <a href="tel:+919979599340" class="s-btn">📞</a>
       </div>
     </div>
     <div class="f-col"><h4>Services</h4><ul><li><a href="#services">Bridal Makeover</a></li><li><a href="#services">Party Makeup</a></li><li><a href="#services">Engagement Look</a></li><li><a href="#services">HD Makeup</a></li><li><a href="#services">Airbrush Makeup</a></li><li><a href="#services">Hair Styling</a></li></ul></div>
     <div class="f-col"><h4>Quick Links</h4><ul><li><a href="#about">About Dipa</a></li><li><a href="#why">Why Choose Us</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#instagram">Instagram</a></li><li><a href="#certs">Certifications</a></li><li><a href="#booking">Book Appointment</a></li></ul></div>
-    <div class="f-col"><h4>Contact</h4><ul><li><a href="tel:+919979599340">+91 99795 99340</a></li><li><a href="https://wa.me/919979599340" target="_blank">WhatsApp Us</a></li><li><a href="https://instagram.com/deevamakeovers" target="_blank">@deevamakeovers</a></li><li>Ahmedabad, Gujarat</li></ul></div>
+    <div class="f-col"><h4>Contact</h4><ul><li><a href="tel:+919979599340">+91 99795 99340</a></li><li><a href="https://wa.me/919979599340" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li><li><a href="https://instagram.com/deevamakeovers" target="_blank" rel="noopener noreferrer">@deevamakeovers</a></li><li>Ahmedabad, Gujarat</li></ul></div>
   </div>
-  <div class="f-bottom"><p>&copy; 2025 <span>Deeva Makeovers</span> by Dipa Bhanushali &middot; All Rights Reserved &middot; Made with ❤️ in Ahmedabad</p></div>
+  <div class="f-bottom"><p>&copy; 2025 <span>Deeva Makeovers</span> by Dipa Bhanushali &middot; All Rights Reserved &middot; </p></div>
 </footer>
 
 <script>
@@ -622,6 +622,19 @@ function processInstagramEmbeds(){
 }
 window.addEventListener('load',processInstagramEmbeds);
 setTimeout(processInstagramEmbeds,500);
+const instaSection=document.querySelector('.instagram');
+if(instaSection){
+  const instaObserver=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        requestAnimationFrame(processInstagramEmbeds);
+        setTimeout(processInstagramEmbeds,800);
+        observer.disconnect();
+      }
+    });
+  },{threshold:0.15});
+  instaObserver.observe(instaSection);
+}
 
 // Counters
 function animCount(el){
@@ -672,7 +685,7 @@ function sendWA(e){
   const dt=document.getElementById('bDate').value||'TBD';
   const m=document.getElementById('bMsg').value||'';
   const txt=`Hello Deeva Makeovers! 👋%0A%0A*Booking Enquiry*%0A%0A*Name:* ${encodeURIComponent(n)}%0A*Phone:* ${encodeURIComponent(p)}%0A*Event:* ${encodeURIComponent(ev)}%0A*Date:* ${encodeURIComponent(dt)}%0A*Message:* ${encodeURIComponent(m)}%0A%0AKindly confirm availability. Thank you! ✨`;
-  window.open(`https://wa.me/919979599340?text=${txt}`,'_blank');
+  window.open(`https://wa.me/919979599340?text=${txt}`,'_blank','noopener,noreferrer');
 }
 </script>
 </body>
