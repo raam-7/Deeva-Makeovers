@@ -181,7 +181,19 @@ section{padding:100px 5%;}
 .insta-follow p{color:var(--text-mid);font-size:0.86rem;line-height:1.6;}
 .insta-link{white-space:nowrap;background:linear-gradient(135deg,var(--gold),var(--champagne));color:var(--white);text-decoration:none;padding:12px 22px;border-radius:999px;font-size:0.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:var(--tr);}
 .insta-link:hover{transform:translateY(-2px);box-shadow:var(--shadow-gold);}
+.insta-embed-wrap {
+  overflow: hidden;
+  border-radius: 12px;        /* match your card radius */
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
 
+.insta-embed-wrap iframe {
+  display: block;
+  max-width: 100%;
+  border: none;
+}
 @media(max-width:900px){
   .insta-head{grid-template-columns:1fr;align-items:start;}
   .insta-actions{justify-content:flex-start;}
@@ -354,9 +366,9 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
       <a href="#services" class="btn-g">View Services</a>
     </div>
     <div class="hero-stats">
-      <div class="h-stat"><div class="num" data-target="500">0</div><div class="lbl">Clients</div></div>
-      <div class="h-stat"><div class="num" data-target="200">0</div><div class="lbl">Brides</div></div>
-      <div class="h-stat"><div class="num" data-target="5">0</div><div class="lbl">Years</div></div>
+      <div class="h-stat"><div class="num" data-target="200">0</div><div class="lbl">Clients</div></div>
+      <div class="h-stat"><div class="num" data-target="30">0</div><div class="lbl">Brides</div></div>
+      <div class="h-stat"><div class="num" data-target="2">0</div><div class="lbl">Years</div></div>
       <div class="h-stat"><div class="num">5.0 ★</div><div class="lbl">Rating</div></div>
     </div>
   </div>
@@ -495,9 +507,7 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
         <div class="insta-avatar"><span>D</span></div>
         <div>
           <div class="insta-handle">@deevamakeovers</div>
-          <div class="insta-meta">
-            Bridal Looks · Reels · Client Moments
-          </div>
+          <div class="insta-meta">Bridal Looks · Reels · Client Moments</div>
         </div>
       </div>
     </div>
@@ -511,41 +521,55 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
 
   <div class="insta-grid">
 
-    <blockquote
-      class="instagram-media reveal"
-      data-instgrm-permalink="https://www.instagram.com/reel/DM0TCQBPGq2/"
-      data-instgrm-version="14">
-    </blockquote>
+    <div class="insta-embed-wrap reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DM0TCQBPGq2/embed"
+        width="320" height="560"
+        frameborder="0" scrolling="no"
+        allowtransparency="true" allow="encrypted-media">
+      </iframe>
+    </div>
 
-    <blockquote
-      class="instagram-media reveal"
-      data-instgrm-permalink="https://www.instagram.com/reel/DTho1a0EjN7/"
-      data-instgrm-version="14">
-    </blockquote>
+    <div class="insta-embed-wrap reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DTho1a0EjN7/embed"
+        width="320" height="560"
+        frameborder="0" scrolling="no"
+        allowtransparency="true" allow="encrypted-media">
+      </iframe>
+    </div>
 
-    <blockquote
-      class="instagram-media reveal"
-      data-instgrm-permalink="https://www.instagram.com/reel/DaATKFWSM4k/"
-      data-instgrm-version="14">
-    </blockquote>
+    <div class="insta-embed-wrap reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DaATKFWSM4k/embed"
+        width="320" height="560"
+        frameborder="0" scrolling="no"
+        allowtransparency="true" allow="encrypted-media">
+      </iframe>
+    </div>
 
-    <blockquote
-      class="instagram-media reveal"
-      data-instgrm-permalink="https://www.instagram.com/reel/DLnCYEDvEoi/"
-      data-instgrm-version="14">
-    </blockquote>
+    <div class="insta-embed-wrap reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DLnCYEDvEoi/embed"
+        width="320" height="560"
+        frameborder="0" scrolling="no"
+        allowtransparency="true" allow="encrypted-media">
+      </iframe>
+    </div>
 
-    <blockquote
-      class="instagram-media reveal"
-      data-instgrm-permalink="https://www.instagram.com/reel/DMZ-_HBPSNB/"
-      data-instgrm-version="14">
-    </blockquote>
+    <div class="insta-embed-wrap reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DMZ-_HBPSNB/embed"
+        width="320" height="560"
+        frameborder="0" scrolling="no"
+        allowtransparency="true" allow="encrypted-media">
+      </iframe>
+    </div>
 
   </div>
 
   <div class="insta-follow reveal">
     <p>Tap through to view the live Instagram profile, reels, and fresh posts.</p>
-
     <a class="insta-link"
        href="https://instagram.com/deevamakeovers"
        target="_blank" rel="noopener noreferrer">
@@ -554,7 +578,7 @@ footer{background:var(--espresso);padding:76px 5% 38px;color:rgba(255,255,255,0.
   </div>
 </section>
 
-<script async src="https://www.instagram.com/embed.js"></script>
+<!-- <script async src="https://www.instagram.com/embed.js"></script> -->
 
 <!-- BOOKING -->
 <section class="booking" id="booking">
